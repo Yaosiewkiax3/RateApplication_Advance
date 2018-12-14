@@ -17,8 +17,9 @@ class ViewMovie : AppCompatActivity() {
         setContentView(R.layout.activity_view_movie)
 
 //        val movieDetails = Movie("VenomSSS","When Eddie Brock acquires the powers of a symbiote, he will have to release his alter-ego \"Venom\" to save his life","English","03-10-2018",true, null,null)
-        var movieAL = applicationContext as MovieArrayList
-        var movieDetails = movieAL.getMovies()[0]
+        val movieAL = applicationContext as MovieArrayList
+        val id = intent.getIntExtra("position",0)
+        val movieDetails = movieAL.getMovies()[id]
         tvTitle.text = movieDetails.getMovieName()
         tvDesc.text = movieDetails.getMovieDesc()
         tvLanguage.text = movieDetails.getMovieLang()

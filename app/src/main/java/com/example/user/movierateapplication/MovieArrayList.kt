@@ -6,7 +6,7 @@ class MovieArrayList: Application() {
     var movieAL = ArrayList<Movie>()
 
     init{
-        this.movieAL = arrayListOf<>()
+        this.movieAL = arrayListOf<Movie>()
     }
 
     fun AddMovie(movie: Movie){
