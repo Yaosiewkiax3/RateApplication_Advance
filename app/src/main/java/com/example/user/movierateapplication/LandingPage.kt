@@ -21,6 +21,13 @@ class LandingPage : AppCompatActivity() {
             movie_list_view.adapter = adpt
         }
         //val recipeList = Recipe.getRecipes
+        movie_list_view.setOnItemClickListener{ _, _, position, _ ->
+//            val selectedMovie = movieAL.getMovies()[position]
+
+            val movieIntent = Intent(this,ViewMovie::class.java)
+            movieIntent.putExtra("position",position)
+            startActivity(movieIntent)
+        }
         registerForContextMenu(movie_list_view)
     }
 
@@ -46,7 +53,6 @@ class LandingPage : AppCompatActivity() {
             // Get view for row item
             val rowView = inflater.inflate(R.layout.list_item_movie, parent, false)
             val titleTextView = rowView.findViewById(R.id.movie_list_title) as TextView
-            val movieImg = rowView.findViewById(R.id.movieImage) as ImageView
             val movie = getItem(position) as Movie
             titleTextView.text = movie.getMovieName()
             return rowView
@@ -64,7 +70,7 @@ class LandingPage : AppCompatActivity() {
         val info = item?.menuInfo as AdapterView.AdapterContextMenuInfo
         if(item?.itemId == 1001){
             val intent = Intent(this, EditMovie::class.java)
-            intent.putExtra("position",info.id)
+            intent.putExtra("position",info.id.toInt())
             startActivity(intent)
         }
 

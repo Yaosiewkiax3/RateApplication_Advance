@@ -79,6 +79,8 @@ class AddMovie : AppCompatActivity() {
             radioButtonEng.isChecked = true
             ptReleaseDate.text.clear()
             cbAudience.isChecked = false
+            cbViolence.isChecked = false
+            cbLanguage.isChecked = false
         }else if(item?.itemId == R.id.addMovie){
             var movieAL=applicationContext as MovieArrayList
             var movieDetails = Movie()
@@ -117,6 +119,7 @@ class AddMovie : AppCompatActivity() {
                 }
                 movieAL.AddMovie(movieDetails)
                 val intent = Intent(this, ViewMovie::class.java)
+                intent.putExtra("position",movieAL.getMovies().size-1)
                 startActivity(intent)
             }
         }
