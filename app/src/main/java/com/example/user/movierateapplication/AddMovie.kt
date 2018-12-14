@@ -80,7 +80,8 @@ class AddMovie : AppCompatActivity() {
             ptReleaseDate.text.clear()
             cbAudience.isChecked = false
         }else if(item?.itemId == R.id.addMovie){
-            var movieDetails = applicationContext as Movie
+            var movieAL=applicationContext as MovieArrayList
+            var movieDetails = Movie()
             val ptMovieName = findViewById<TextView>(R.id.ptMovieName)
             val movieName: String? = ptMovieName.text.toString()
             val ptDesc = findViewById<TextView>(R.id.ptDesc)
@@ -114,6 +115,7 @@ class AddMovie : AppCompatActivity() {
                         movieDetails.setMovieViolence(true)
                     }
                 }
+                movieAL.AddMovie(movieDetails)
                 val intent = Intent(this, ViewMovie::class.java)
                 startActivity(intent)
             }
