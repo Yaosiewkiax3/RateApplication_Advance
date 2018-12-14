@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_view_movie.*
 import com.example.user.movierateapplication.Movie
 class ViewMovie : AppCompatActivity() {
@@ -64,6 +65,9 @@ class ViewMovie : AppCompatActivity() {
     override fun onContextItemSelected(item: MenuItem?): Boolean {
         if(item?.itemId == 1001){
             val intent = Intent(this, RateMovie::class.java)
+            val id = intent.getIntExtra("position",0)
+            Toast.makeText(this,id.toString(),Toast.LENGTH_SHORT).show()
+            intent.putExtra("review",id)
             startActivity(intent)
         }
         return super.onContextItemSelected(item)

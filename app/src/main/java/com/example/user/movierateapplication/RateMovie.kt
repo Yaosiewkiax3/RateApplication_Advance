@@ -14,14 +14,19 @@ class RateMovie : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val movieAL = applicationContext as MovieArrayList
+        val id = intent.getIntExtra("position",0)
+        val movieDetails = movieAL.getMovies()[id]
         setContentView(R.layout.activity_rate_movie)
-            var movieDetails = applicationContext as Movie
             textView5.setText("Enter your review for the movie: " +movieDetails.getMovieName())
         }
 
     override fun onBackPressed() {
-        val intent = Intent(this, ViewMovie::class.java)
-        startActivity(intent)
+        val id = intent.getIntExtra("review",0)
+        val intent2 = Intent(this, ViewMovie::class.java)
+        intent2.putExtra("position",id)
+        startActivity(intent2)
+
         super.onBackPressed()
     }
 
@@ -32,7 +37,9 @@ class RateMovie : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if(item?.itemId == R.id.rateMenu){
-            var movieDetails = applicationContext as Movie
+            val movieAL = applicationContext as MovieArrayList
+            val id = intent.getIntExtra("review",0)
+            val movieDetails = movieAL.getMovies()[id]
             val ptMovieRate = findViewById<EditText>(R.id.ratingComments)
             val movieRate: String? = ptMovieRate.text.toString()
             if(movieRate.isNullOrEmpty()){
