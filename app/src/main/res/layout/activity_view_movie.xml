@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+              android:layout_height="match_parent" android:orientation="vertical">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="89dp" app:srcCompat="@drawable/mobile" android:id="@+id/imageView"/>
+    <TextView
+            android:text="Title:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView4"/>
+    <TextView
+            android:text="Venom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/tvTitle" android:textSize="24sp"/>
+    <TextView
+            android:text="Overview:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView9"/>
+    <TextView
+            android:text="When Eddie Brock acquires the power of venom..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/tvDesc" android:textSize="22sp"/>
+    <TextView
+            android:text="Reviews:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView6"/>
+    <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/ratingBar" android:numStars="5"
+            android:visibility="gone" android:clickable="false"/>
+    <TextView
+            android:text="No Reviews yet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/tvNoReviews" android:textSize="22sp"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/tvAddReview" android:textSize="22sp"
+            android:text="Long hold to add a review"/>
+    <TextView
+            android:text="Language:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView12"/>
+    <TextView
+            android:text="English"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/tvLanguage" android:textSize="22sp"/>
+    <TextView
+            android:text="Release date:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView14"/>
+    <TextView
+            android:text="03-10-2018"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/tvDate" android:textSize="22sp"/>
+    <TextView
+            android:text="Suitable for ages below 13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView15"/>
+    <TextView
+            android:text="Yes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/tvSuitable" android:textSize="22sp"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/LLReaons" android:visibility="invisible">
+        <TextView
+                android:text="Reasons:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView3"/>
+        <TextView
+                android:text="Violence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/tvViolence" android:textSize="22sp"/>
+        <TextView
+                android:text="Adult language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/tvAdultLanguage" android:textSize="22sp"/>
+    </LinearLayout>
+</LinearLayout>

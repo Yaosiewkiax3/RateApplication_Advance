@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".AddMovie" tools:layout_editor_absoluteY="0dp"
+              tools:layout_editor_absoluteX="0dp">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:id="@+id/tvName"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/ptMovieName" android:hint="Movie Name"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:id="@+id/tvDescription"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/ptMovieDesc" android:hint="Movie Name"/>
+    <TextView
+            android:text="Language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView"/>
+    <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:orientation="horizontal" android:id="@+id/rgLang">
+        <RadioButton
+                android:text="English"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/radioButtonEng" android:layout_weight="1"
+                android:checked="true"/>
+        <RadioButton
+                android:text="Chinese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/radioButtonChi" android:layout_weight="1"/>
+        <RadioButton
+                android:text="Malay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/radioButtonMal" android:layout_weight="1"/>
+        <RadioButton
+                android:text="Tamil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/radioButtonTam" android:layout_weight="1"/>
+    </RadioGroup>
+    <TextView
+            android:text="Release date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView2"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/ptReleaseDate" android:hint="Release date" android:inputType="date"/>
+    <CheckBox
+            android:text="Not suitable for all audience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/cbAudience"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_weight="1" android:weightSum="1">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_weight="0.3" android:visibility="invisible"
+                android:id="@+id/cbReasons">
+            <CheckBox
+                    android:text="Violence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/cbViolence" android:layout_weight="1"/>
+            <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/cbLanguage" android:layout_weight="1"
+                    android:text="Language used"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
